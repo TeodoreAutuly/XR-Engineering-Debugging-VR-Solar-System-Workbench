@@ -132,7 +132,6 @@ GameObject:
   - component: {fileID: 51106536}
   - component: {fileID: 51106535}
   - component: {fileID: 51106534}
-  - component: {fileID: 51106538}
   m_Layer: 0
   m_Name: Saturn
   m_TagString: Untagged
@@ -246,19 +245,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51106532}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &51106538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51106532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38cbc85da56c9c2ca86ed9f088ff8ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanetSelectable
-  triggerTag: Player
 --- !u!1 &65644134
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +570,6 @@ GameObject:
   - component: {fileID: 162809967}
   - component: {fileID: 162809966}
   - component: {fileID: 162809965}
-  - component: {fileID: 162809969}
   m_Layer: 0
   m_Name: Jupiter
   m_TagString: Untagged
@@ -698,19 +683,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162809963}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &162809969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 162809963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38cbc85da56c9c2ca86ed9f088ff8ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanetSelectable
-  triggerTag: Player
 --- !u!1 &164238653
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,7 +696,6 @@ GameObject:
   - component: {fileID: 164238657}
   - component: {fileID: 164238656}
   - component: {fileID: 164238655}
-  - component: {fileID: 164238659}
   m_Layer: 0
   m_Name: Neptune
   m_TagString: Untagged
@@ -838,19 +809,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164238653}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &164238659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164238653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38cbc85da56c9c2ca86ed9f088ff8ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanetSelectable
-  triggerTag: Player
 --- !u!1 &300667037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,7 +978,6 @@ GameObject:
   - component: {fileID: 402645129}
   - component: {fileID: 402645128}
   - component: {fileID: 402645127}
-  - component: {fileID: 402645131}
   m_Layer: 0
   m_Name: Mercury
   m_TagString: Untagged
@@ -1134,19 +1091,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402645125}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &402645131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 402645125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38cbc85da56c9c2ca86ed9f088ff8ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanetSelectable
-  triggerTag: Player
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,7 +1571,6 @@ GameObject:
   - component: {fileID: 676953536}
   - component: {fileID: 676953535}
   - component: {fileID: 676953534}
-  - component: {fileID: 676953538}
   m_Layer: 0
   m_Name: Uranus
   m_TagString: Untagged
@@ -1741,19 +1684,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676953532}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &676953538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 676953532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38cbc85da56c9c2ca86ed9f088ff8ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanetSelectable
-  triggerTag: Player
 --- !u!1 &723189209
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,7 +2077,6 @@ GameObject:
   - component: {fileID: 861533361}
   - component: {fileID: 861533360}
   - component: {fileID: 861533359}
-  - component: {fileID: 861533363}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -2261,19 +2190,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861533357}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &861533363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861533357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38cbc85da56c9c2ca86ed9f088ff8ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanetSelectable
-  triggerTag: Player
 --- !u!1 &1091895461 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1767192433, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -2902,6 +2818,7 @@ MonoBehaviour:
   scaleSpeed: 1
   minScale: 0.01
   maxScale: 5
+  focalPoint: {fileID: 723189210}
 --- !u!1 &1351534493
 GameObject:
   m_ObjectHideFlags: 0
@@ -2915,7 +2832,6 @@ GameObject:
   - component: {fileID: 1351534497}
   - component: {fileID: 1351534496}
   - component: {fileID: 1351534495}
-  - component: {fileID: 1351534499}
   m_Layer: 0
   m_Name: Mars
   m_TagString: Untagged
@@ -3029,19 +2945,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351534493}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1351534499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351534493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38cbc85da56c9c2ca86ed9f088ff8ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanetSelectable
-  triggerTag: Player
 --- !u!1 &1573377242
 GameObject:
   m_ObjectHideFlags: 0
@@ -3055,7 +2958,6 @@ GameObject:
   - component: {fileID: 1573377246}
   - component: {fileID: 1573377245}
   - component: {fileID: 1573377244}
-  - component: {fileID: 1573377248}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -3168,19 +3070,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573377242}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1573377248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573377242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38cbc85da56c9c2ca86ed9f088ff8ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanetSelectable
-  triggerTag: Player
 --- !u!1 &1644987590
 GameObject:
   m_ObjectHideFlags: 0
@@ -3350,7 +3239,6 @@ GameObject:
   - component: {fileID: 1847102676}
   - component: {fileID: 1847102675}
   - component: {fileID: 1847102674}
-  - component: {fileID: 1847102678}
   m_Layer: 0
   m_Name: Venus
   m_TagString: Untagged
@@ -3464,19 +3352,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847102672}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1847102678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1847102672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38cbc85da56c9c2ca86ed9f088ff8ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanetSelectable
-  triggerTag: Player
 --- !u!1001 &1888246011
 PrefabInstance:
   m_ObjectHideFlags: 0

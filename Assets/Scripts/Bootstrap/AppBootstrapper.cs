@@ -5,7 +5,10 @@ public class AppBootstrapper : MonoBehaviour
 {
     public SolarSystemConfig config;
 
+    public Transform solarSystemRoot;
+    public SunView sun;
     public PlanetView[] planets;
+    public OrbitRenderer[] orbits;
     TimeModel timeModel;
     TimeController timeController;
     PlanetSystemController controller;
@@ -13,6 +16,11 @@ public class AppBootstrapper : MonoBehaviour
     void Start()
     {
         Debug.Log("[BOOT] Initializing application");
+
+        if (sun != null)
+            sun.Init();
+        else
+            Debug.LogWarning("[BOOT] Aucun SunView assigné.");
 
         timeModel = new TimeModel();
 
@@ -29,15 +37,14 @@ public class AppBootstrapper : MonoBehaviour
 
         timeController.Init(timeModel);
 
-        foreach (var planet in planets)
+        foreach (var orbit in orbits)
         {
-            var orbitRenderer = planet.gameObject.GetComponent<OrbitRenderer>();
-            if (orbitRenderer == null)
+            if (orbit == null)
             {
-                Debug.LogWarning($"[BOOT] {planet.gameObject.name} n'a pas de composant OrbitRenderer.");
+                Debug.LogWarning("[BOOT] Un OrbitRenderer est null dans le tableau orbits.");
                 continue;
             }
-            orbitRenderer.DrawOrbit(planet.planet, ephemeris, orbitStartDate);
+            orbit.DrawOrbit(orbit.planet, ephemeris, orbitStartDate);
         }
     }
 }

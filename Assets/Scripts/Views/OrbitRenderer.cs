@@ -21,11 +21,14 @@ public class OrbitRenderer : MonoBehaviour
 
     LineRenderer lineRenderer;
 
+    public PlanetData.Planet planet;
+
     void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.loop = true;
-        lineRenderer.useWorldSpace = true;
+        // Local space : les positions bougent avec le parent (SolarSystemRoot) lors du grab
+        lineRenderer.useWorldSpace = false;
     }
 
     /// <summary>
@@ -44,17 +47,12 @@ public class OrbitRenderer : MonoBehaviour
         float stepDays = periodDays / samples;
 
         var points = new Vector3[samples];
-        Transform parentTransform = transform.parent;
 
         for (int i = 0; i < samples; i++)
         {
             var t = start.AddDays(i * stepDays);
-            Vector3 localPos = ephemeris.GetPlanetPosition(planet, t);
-
-            // Même espace que PlanetView.SetPosition (transform.localPosition)
-            points[i] = parentTransform != null
-                ? parentTransform.TransformPoint(localPos)
-                : localPos;
+            // Positions en espace local du parent (root) : pas de TransformPoint
+            points[i] = ephemeris.GetPlanetPosition(planet, t);
         }
 
         lineRenderer.positionCount = samples;
