@@ -6,8 +6,8 @@ public class AppBootstrapper : MonoBehaviour
     public SolarSystemConfig config;
 
     public PlanetView[] planets;
-
     TimeModel timeModel;
+    TimeController timeController;
     PlanetSystemController controller;
 
     void Start()
@@ -16,7 +16,10 @@ public class AppBootstrapper : MonoBehaviour
 
         timeModel = new TimeModel();
 
+        timeController = gameObject.AddComponent<TimeController>();
+
         var ephemeris = new PlanetEphemerisService();
+        var orbitStartDate = DateTime.Now;
 
         controller = new PlanetSystemController(
             timeModel,
@@ -24,6 +27,17 @@ public class AppBootstrapper : MonoBehaviour
             planets
         );
 
-        timeModel.SetTime(DateTime.Now);
+        timeController.Init(timeModel);
+
+        foreach (var planet in planets)
+        {
+            var orbitRenderer = planet.gameObject.GetComponent<OrbitRenderer>();
+            if (orbitRenderer == null)
+            {
+                Debug.LogWarning($"[BOOT] {planet.gameObject.name} n'a pas de composant OrbitRenderer.");
+                continue;
+            }
+            orbitRenderer.DrawOrbit(planet.planet, ephemeris, orbitStartDate);
+        }
     }
 }
