@@ -23,20 +23,23 @@ public class PlanetSystemController
         this.planetSizeScale = planetSizeScale;
 
         foreach (var planet in planets)
+        {
+            if (planet == null) { Debug.LogWarning("[BOOT] PlanetSystemController : une PlanetView est null dans le tableau planets."); continue; }
             planet.SetSize(planetSizeScale);
+        }
 
         timeModel.OnTimeChanged += UpdatePlanets;
     }
 
     void UpdatePlanets(DateTime time)
     {
-        Debug.Log("[TIME] Updating planets " + time);
+        //Debug.Log("[TIME] Updating planets " + time);
 
         foreach (var planet in planets)
         {
+            if (planet == null) continue;
             Vector3 pos =
                 ephemeris.GetPlanetPosition(planet.planet, time) * distanceScale;
-
             planet.SetPosition(pos);
         }
     }

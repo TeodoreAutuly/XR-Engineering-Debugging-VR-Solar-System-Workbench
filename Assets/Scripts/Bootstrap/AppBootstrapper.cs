@@ -1,6 +1,8 @@
 using UnityEngine;
 using System;
 
+// S'exécute avant tous les autres MonoBehaviours (Start en premier)
+[DefaultExecutionOrder(-100)]
 public class AppBootstrapper : MonoBehaviour
 {
     public SolarSystemConfig config;
@@ -10,6 +12,8 @@ public class AppBootstrapper : MonoBehaviour
     public PlanetView[] planets;
     public OrbitRenderer[] orbits;
     public FocusController focusController;
+    public ControlPanelUI controlPanel;
+    public DebugOverlay debugOverlay;
     TimeModel timeModel;
     TimeController timeController;
     PlanetSystemController controller;
@@ -46,6 +50,20 @@ public class AppBootstrapper : MonoBehaviour
         );
 
         timeController.Init(timeModel);
+
+        if (controlPanel != null)
+        {
+            Debug.Log("[BOOT] controlPanel trouvé : " + controlPanel.gameObject.name + " — actif : " + controlPanel.gameObject.activeInHierarchy);
+            controlPanel.timeController = timeController;
+            if (controlPanel.orbits == null || controlPanel.orbits.Length == 0)
+                controlPanel.orbits = orbits;
+            controlPanel.Init(timeModel);
+        }
+        else
+            Debug.LogWarning("[BOOT] controlPanel non assigné dans AppBootstrapper — les boutons seront inactifs");
+
+        if (debugOverlay != null)
+            debugOverlay.Init(timeModel, timeController);
 
         bool showOrbits = config != null ? config.showOrbits : true;
 

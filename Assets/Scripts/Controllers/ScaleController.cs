@@ -44,7 +44,6 @@ public class ScaleController : MonoBehaviour
 
     void OnAxisChanged(InputAction.CallbackContext ctx)
     {
-        Debug.Log($"[SCALE] Axis input received: {ctx.ReadValue<Vector2>()}");
         float y = ctx.ReadValue<Vector2>().y;
 
         if (Mathf.Abs(y) < 0.1f) // deadzone
@@ -79,6 +78,9 @@ public class ScaleController : MonoBehaviour
         {
             float current = transform.localScale.x;
             float next = Mathf.Clamp(current + axisY * scaleSpeed * Time.deltaTime * current, minScale, maxScale);
+
+            if (next <= minScale || next >= maxScale)
+                Debug.LogWarning($"[PERF] Scale aux bornes : {next:F4} (min={minScale}, max={maxScale})");
 
             if (sunTransform != null)
             {
