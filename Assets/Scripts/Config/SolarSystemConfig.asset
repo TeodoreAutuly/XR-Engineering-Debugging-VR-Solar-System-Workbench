@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18bb2cdef705a3448576cb7ce431f00, type: 3}
   m_Name: SolarSystemConfig
   m_EditorClassIdentifier: Assembly-CSharp::SolarSystemConfig
-  distanceScale: 0.000001
+  distanceScale: 0.04
   planetSizeScale: 0.01
   showOrbits: 1

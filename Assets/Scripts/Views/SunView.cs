@@ -2,11 +2,10 @@ using UnityEngine;
 
 public class SunView : MonoBehaviour
 {
-    /// <summary>
-    /// Place le Soleil à l'origine du système solaire.
-    /// </summary>
-    public void Init()
+    // Place le Soleil à l'origine du système solaire.
+    public void Init(float sizeScale = 1f)
     {
         transform.localPosition = Vector3.zero;
+        transform.localScale = Vector3.one * sizeScale;
     }
 }

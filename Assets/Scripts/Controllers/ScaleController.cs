@@ -2,22 +2,20 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 
-/// <summary>
-/// À placer sur SolarSystemRoot.
-/// Utilise l'axe vertical du joystick droit pour scaler le système solaire.
-/// Assigner "rightHandScaleAction" dans l'Inspector (ex : XRI Right/Primary2DAxis).
-/// </summary>
 public class ScaleController : MonoBehaviour
 {
     [Header("Input")]
     public InputActionReference rightHandScaleAction;
 
     [Header("Scale")]
+    [Tooltip("Transform du Soleil : le système solaire sera agrandi/réduit autour de sa position monde")]
+    public Transform sunTransform;
+
     [Tooltip("Vitesse de changement de scale par seconde")]
     public float scaleSpeed = 0.5f;
 
     [Tooltip("Scale minimale du système")]
-    public float minScale = 0.01f;
+    public float minScale = 1f;
 
     [Tooltip("Scale maximale du système")]
     public float maxScale = 5f;
@@ -55,7 +53,6 @@ public class ScaleController : MonoBehaviour
             return;
         }
 
-        // Redémarre si l'axe change de valeur en cours de route
         StopScaleCoroutine();
         scaleCoroutine = StartCoroutine(ScaleRoutine(y));
         Debug.Log($"[SCALE] Axis changed: {y:F2}, starting scale coroutine.");
@@ -82,7 +79,20 @@ public class ScaleController : MonoBehaviour
         {
             float current = transform.localScale.x;
             float next = Mathf.Clamp(current + axisY * scaleSpeed * Time.deltaTime * current, minScale, maxScale);
-            transform.localScale = Vector3.one * next;
+
+            if (sunTransform != null)
+            {
+                Vector3 sunWorldPosBefore = sunTransform.position;
+
+                transform.localScale = Vector3.one * next;
+
+                transform.position += sunWorldPosBefore - sunTransform.position;
+            }
+            else
+            {
+                transform.localScale = Vector3.one * next;
+            }
+
             yield return null;
         }
     }

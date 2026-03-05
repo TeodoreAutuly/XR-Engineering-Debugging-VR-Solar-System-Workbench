@@ -8,4 +8,9 @@ public class PlanetView : MonoBehaviour
     {
         transform.localPosition = pos;
     }
+
+    public void SetSize(float sizeScale)
+    {
+        transform.localScale = Vector3.one * sizeScale;
+    }
 }

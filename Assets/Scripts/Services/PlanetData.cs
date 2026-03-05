@@ -8,6 +8,39 @@ public static class PlanetData
     public enum Planet { Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune }
     public enum KeplerParameter { a, e, I, L, longPeri, longNode, b, c, s, f}
 
+    static readonly System.Collections.Generic.Dictionary<Planet, float> orbitalPeriodsDays =
+        new System.Collections.Generic.Dictionary<Planet, float>
+        {
+            { Planet.Mercury,   87.97f   },
+            { Planet.Venus,    224.70f   },
+            { Planet.Earth,    365.25f   },
+            { Planet.Mars,     686.97f   },
+            { Planet.Jupiter, 4332.59f   },
+            { Planet.Saturn,  10759.22f  },
+            { Planet.Uranus,  30688.50f  },
+            { Planet.Neptune, 60182.00f  },
+        };
+
+    // Semi-major axis in AU (epoch J2000)
+    static readonly System.Collections.Generic.Dictionary<Planet, float> semiMajorAxisAU =
+        new System.Collections.Generic.Dictionary<Planet, float>
+        {
+            { Planet.Mercury,  0.387f },
+            { Planet.Venus,    0.723f },
+            { Planet.Earth,    1.000f },
+            { Planet.Mars,     1.524f },
+            { Planet.Jupiter,  5.203f },
+            { Planet.Saturn,   9.537f },
+            { Planet.Uranus,  19.191f },
+            { Planet.Neptune, 30.069f },
+        };
+
+    public static float GetOrbitalPeriodDays(Planet planet) =>
+        orbitalPeriodsDays.TryGetValue(planet, out float v) ? v : 0f;
+
+    public static float GetSemiMajorAxisAU(Planet planet) =>
+        semiMajorAxisAU.TryGetValue(planet, out float v) ? v : 0f;
+
     /// <summary>
     /// Get planet coordinates at a given time (in AU)
     /// </summary>
